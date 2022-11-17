@@ -1,19 +1,28 @@
 #include "Color.h"
 
 Color::Color()
-	:r(0),g(0),b(0)
 {
-
+	colorStruct.red = 0;
+	colorStruct.green = 0;
+	colorStruct.blue = 0;
 }
 
-Color::Color(float red, float green, float blue)
-	:r(red), g(green),b(blue)
+Color::Color(uint8_t blue, uint8_t green, uint8_t red)
 {
+	colorStruct.blue = blue;
+	colorStruct.red = red;
+	colorStruct.green = green;
 }
 
-Color Color::GetColor() const
+
+Color::ColorStruct Color::GetColor() const
 {
-	return Color();//chyba zmienic
+	return colorStruct;
+}
+
+void Color::SetRedColor(int color)
+{
+	colorStruct.red = color;
 }
 
 Color::~Color()
