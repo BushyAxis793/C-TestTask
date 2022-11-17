@@ -13,11 +13,11 @@ public:
 	void SetColor(float r, float g, float b);
 	Color GetColor() const;
 
-	void ExportImage(const char*)const;
+	void ExportImage(const char*);
 
 private:
-	int m_width;
-	int m_heigth;
+	int m_width = 0;
+	int m_height = 0;
 	
 
 };
