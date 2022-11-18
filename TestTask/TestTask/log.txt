@@ -1,0 +1,2 @@
+Image A colors quantity: 6291456
+Image B colors quantity: 6291456

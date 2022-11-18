@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <list>
+#include <string>
 #include "Color.h"
 
 class Image
@@ -37,8 +38,13 @@ private:
 
 public:
 	Image();
-	Image(uint8_t, uint8_t, uint8_t);
 	Image(const Image&);
+	void CreateImageWithStrips(const char*);
+	void CreateImageGradient(const char*, uint8_t , uint8_t , uint8_t );
+	void CreateMixedImage(const char*,Image*, Image*);
+	void WriteImageAsPNG(std::string);
+	void GenerateLogFile(Image*,Image*);
+	uint32_t GetColorsQuantity(Image*);
 	~Image();
 
 	void SetColor(float r, float g, float b);

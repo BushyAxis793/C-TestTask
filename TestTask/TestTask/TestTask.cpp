@@ -10,15 +10,19 @@
 
 int main()
 {
-	std::unique_ptr<Image> imageB (new Image());
-	std::unique_ptr<Image> imageA(new Image(255,0,0));
+	Image *imageA = new Image();
+	Image *imageB = new Image();
+	Image *imageC = new Image();
+
+
+	imageB->CreateImageWithStrips("ImageB.bmp");
+	imageA->CreateImageGradient("ImageA.bmp", 255, 0, 0);
+	imageC->CreateMixedImage("imageC.bmp", imageB, imageA);
+	imageC->WriteImageAsPNG("imageC.bmp");
+	imageC->GenerateLogFile(imageA, imageB);
 	/*
 
-	/* Dodać konstrukctor domyslny który tworzy imgA
-	* i generuje obrazek z czarnym tlem i bialymi liniami.+
-	* Dodać konstrukctor kopiujący który tworzy obraz z 
-	* grafiką jak imgA -
-	* Dodać kosntruktor pzeciazony, który generuje sam kolor +
+	
 	*
 	
 	
@@ -27,7 +31,7 @@ int main()
 	
 
 	/* Mierzenie czasu operacji
-    auto start = std::chrono::high_resolution_clock::now();
+    
     
 
     auto stop = std::chrono::high_resolution_clock::now();
