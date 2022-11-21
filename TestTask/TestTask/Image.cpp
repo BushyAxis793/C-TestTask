@@ -102,11 +102,7 @@ void Image::SetColor(float r, float g, float b)
 
 void Image::WriteImageAsPNG(std::string fileName)
 {
-	std::ifstream file (fileName, std::ios::binary);
-	auto i = fileName.rfind('.', fileName.length());
-	fileName.replace(i + 1, fileName.length(), "png");
-	
-	file.close();
+	//
 	
 	
 }
@@ -129,12 +125,13 @@ uint32_t Image::GetColorsQuantity(Image* image)
 		image->bmpInfoHeader.colorDepth;
 }
 
-void Image::GenerateLogFile(Image* image, Image* image2)
+void Image::GenerateLogFile(Image* image, Image* image2,std::chrono::microseconds time)
 {
 	std::ofstream logFile("log.txt", std::ios::binary);
 
 	logFile << "Image A colors quantity: " <<GetColorsQuantity(image)<<std::endl;
 	logFile << "Image B colors quantity: " << GetColorsQuantity(image2) << std::endl;
+	logFile << "Total time of operations: " << time.count() <<" [microseconds]"<< std::endl;
 
 
 

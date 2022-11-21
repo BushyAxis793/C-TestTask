@@ -6,9 +6,5 @@ public:
 	Timer();
 	~Timer();
 
-	float StartTimer();
-	void StopTimer();
-	//dodac timer
-
 };
 

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include <chrono>
 #include "Color.h"
 
 class Image
@@ -43,7 +44,7 @@ public:
 	void CreateImageGradient(const char*, uint8_t , uint8_t , uint8_t );
 	void CreateMixedImage(const char*,Image*, Image*);
 	void WriteImageAsPNG(std::string);
-	void GenerateLogFile(Image*,Image*);
+	void GenerateLogFile(Image*,Image*,std::chrono::microseconds);
 	uint32_t GetColorsQuantity(Image*);
 	~Image();
 
